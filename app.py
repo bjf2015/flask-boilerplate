@@ -68,6 +68,11 @@ def forgot():
     form = ForgotForm(request.form)
     return render_template('forms/forgot.html', form=form)
 
+@app.route('/note')
+def note():
+    form = NoteForm(request.form)
+    return render_template('/forms/note.html', form=form)
+
 # Error handlers.
 
 

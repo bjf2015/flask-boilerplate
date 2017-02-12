@@ -1,5 +1,5 @@
 from flask_wtf import Form
-from wtforms import TextField, PasswordField
+from wtforms import TextField, PasswordField, SelectField, TextAreaField
 from wtforms.validators import DataRequired, EqualTo, Length
 
 # Set your classes here.
@@ -31,3 +31,8 @@ class ForgotForm(Form):
     email = TextField(
         'Email', validators=[DataRequired(), Length(min=6, max=40)]
     )
+
+class NoteForm(Form):
+    title = TextField('Title', validators=[DataRequired(), Length(min=6, max=20)])
+    language = SelectField(u'Programming Language', choices=[('js', 'JavaScript'), ('py', 'Python'), ('text', 'Plain Text')])
+    note = TextField('Note', validators=[DataRequired(), Length(min=6, max=400)])

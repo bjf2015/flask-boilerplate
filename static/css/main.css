@@ -26,6 +26,10 @@ a {
   background: #555;
   color: #FFF;
 }
+#editor-container {
+  height: 375px;
+}
+
 /* Main elements end */
 
 
